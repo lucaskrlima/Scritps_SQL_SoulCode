@@ -1,0 +1,2 @@
+SELECT m.NOC, m.media_medalha, im.media FROM `projetofinal-394711.athelet_events.media_medalhas` as m 
+LEFT OUTER JOIN `projetofinal-394711.athelet_events.idh_media` as im ON im.NOC = m.NOC
