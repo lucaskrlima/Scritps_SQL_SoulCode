@@ -1,0 +1,8 @@
+# Faça uma tabela que mostre a média de casos novos por semana epidemiológica
+SELECT semanaEpi,
+AVG(casosNovos) AS media_semana_epi
+FROM `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil_tratado`
+GROUP BY semanaEpi
+ORDER BY media_semana_epi ASC;
+
+

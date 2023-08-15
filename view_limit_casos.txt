@@ -1,0 +1,8 @@
+# Faça uma tabela que mostre os 10 municípios com mais casos de acumulados.
+SELECT municipio,
+SUM(casosAcumulado) AS maiores_casos_acumulados,
+FROM `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil_tratado` 
+GROUP BY municipio
+ORDER BY maiores_casos_acumulados DESC
+LIMIT 11; #limite de 11 devido aos valores NA
+

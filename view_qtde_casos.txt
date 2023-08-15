@@ -1,0 +1,7 @@
+# Faça uma tabela que mostre a quantidade de casos por estado em ordem decrescente
+SELECT estado, 
+COUNT(*) AS qtd_de_casos
+FROM `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil_tratado`
+GROUP BY estado
+ORDER BY qtd_de_casos DESC;
+

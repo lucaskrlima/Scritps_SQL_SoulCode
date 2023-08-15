@@ -1,0 +1,10 @@
+create table  `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil_novo` AS(
+  select _estado_,
+case 
+    when _estado_ is null then 'NA'
+    else replace(_estado_,"'","")
+end as estado,
+count (*) as qtd
+from `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil`
+group by _estado_
+)

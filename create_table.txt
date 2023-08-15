@@ -1,0 +1,42 @@
+CREATE TABLE  `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil_tratado` AS(
+    SELECT 
+    CASE 
+      WHEN _regiao_ IS NULL THEN 'NA' 
+      ELSE REPLACE(_regiao_, "'", "")
+    END AS regiao,
+    CASE 
+      WHEN _estado_ IS NULL THEN 'NA' 
+      ELSE REPLACE(_estado_, "'", "")
+    END AS estado,
+    CASE 
+      WHEN _municipio_ IS NULL THEN 'NA' 
+      ELSE REPLACE(_municipio_, "'", "")
+    END AS municipio,
+    CASE 
+      WHEN _coduf_ IS NULL THEN 'NA' 
+      ELSE REPLACE(_coduf_, "'", "")
+    END AS coduf,
+    CASE 
+      WHEN _nomeRegiaoSaude_ IS NULL THEN 'NA' 
+      ELSE REPLACE(_nomeRegiaoSaude_, "'", "")
+    END AS nomeRegiaoSaude,
+    CASE 
+      WHEN _populacaoTCU2019_ IS NULL THEN 'NA' 
+      ELSE REPLACE(_populacaoTCU2019_, "'", "")
+    END AS populacaoTCU2019,
+    _codmun_ AS codmun,
+    _codRegiaoSaude_ AS codRegiaoSaude,
+    _semanaEpi_ AS semanaEpi,
+    _casosAcumulado_ AS casosAcumulado,
+    _casosNovos_ AS casosNovos,
+    _obitosAcumulado_ AS obitosAcumulado,
+    _obitosNovos_ AS obitosNovos,
+    _Recuperadosnovos_ AS Recuperadosnovos,
+    _emAcompanhamentoNovos_ AS emAcompanhamentoNovos,
+    _FgMetro_ AS FgMetro,
+    _data_ AS data,
+    FORMAT_DATE('%m%Y', _data_) AS MesAno,
+
+   
+FROM `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil`
+);

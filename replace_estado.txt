@@ -1,0 +1,4 @@
+select replace (_estado_, "'", "") as estado,
+count(_estado_) as estado_qtd
+from `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil` 
+group by _estado_;

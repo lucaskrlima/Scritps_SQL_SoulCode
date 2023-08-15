@@ -1,0 +1,8 @@
+# Faça uma tabela que contenha total de casos novos, óbitos acumulados e recuperados novos por município.
+SELECT municipio,
+SUM(casosNovos) AS total_casos_novos,
+SUM(obitosAcumulado) AS total_obitos_acumulados,
+SUM(Recuperadosnovos) AS total_recuperados_novos
+FROM `projeto-do-lucas-kaue.dados_covid.dados_covid_brasil_tratado`
+GROUP BY municipio;
+
